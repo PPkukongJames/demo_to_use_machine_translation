@@ -9,8 +9,8 @@ class Machine_Translation :
             cls._instance = super(Machine_Translation, cls).__new__(cls)
             if name == 'mbart_fb':
                 from transformers import MBartForConditionalGeneration, MBart50TokenizerFast
-                cls.model = MBartForConditionalGeneration.from_pretrained("google/madlad400-10b-mt")
-                cls.tokenizer = MBart50TokenizerFast.from_pretrained("google/madlad400-10b-mt")
+                cls.model = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
+                cls.tokenizer = MBart50TokenizerFast.from_pretrained("facebook/mbart-large-50-many-to-many-mmt")
                 cls.engine = cls._instance.mbart_fb
             elif name == 'pythai':
                 from pythainlp.translate import Translate
